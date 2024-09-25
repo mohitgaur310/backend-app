@@ -9,11 +9,11 @@ func main() {
 	var texRate float64 
 
 
-	fmt.Print(("Revenue :"))
+	outputText("Revenue :")
 	fmt.Scan(&revenue);
-	fmt.Print(("Expenses :"))
+	outputText("Expenses :")
 	fmt.Scan(&expenses);
-	fmt.Print(("Tex rate :"))
+	outputText("Tex rate :")
 	fmt.Scan(&texRate);
 
 	ebt:= revenue-expenses;
@@ -24,4 +24,8 @@ func main() {
 
 
 	fmt.Println(ebt,profile,ratioString)
+}
+
+func outputText(text string){
+	fmt.Println(text)
 }
