@@ -18,8 +18,10 @@ func main() {
 
 	ebt:= revenue-expenses;
 	profile := ebt*(1-texRate/100)
-	ratio:= ebt /profile
+	ratioString := fmt.Sprintf("the ratio of the ebt and profit is  %.2f",ebt /profile) 
 
 
-	fmt.Println(ebt,profile,ratio)
+
+
+	fmt.Println(ebt,profile,ratioString)
 }
