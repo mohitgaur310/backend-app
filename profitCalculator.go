@@ -4,17 +4,11 @@ import (
 	"fmt"
 )
 func main() {
-	var revenue float64 
-	var expenses float64 
-	var texRate float64 
 
 
-	outputText("Revenue :")
-	fmt.Scan(&revenue);
-	outputText("Expenses :")
-	fmt.Scan(&expenses);
-	outputText("Tex rate :")
-	fmt.Scan(&texRate);
+	revenue:= userInput("Revenue :")
+	expenses:= userInput("Expenses :")
+	texRate:=userInput("Tex rate :")
 
 	ebt,profile:= calculateFutureValue(revenue,expenses,texRate)
 	ratioString := fmt.Sprintf("the ratio of the ebt and profit is  %.2f",ebt /profile) 
@@ -30,4 +24,11 @@ func calculateFutureValue(revenue float64,expenses float64,texRate float64) (flo
 	ebt:= revenue-expenses;
 	profile := ebt*(1-texRate/100)
 	return ebt,profile
+}
+
+func userInput(text string)  (value float64 ){
+	// outputText("Revenue :") 
+	outputText(text)
+	fmt.Scan(&value);
+	return value
 }
